@@ -2,15 +2,17 @@ import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { RegistrarPage } from '../registrar/registrar';
 import {Storage} from '@ionic/storage';
+import { InicioPage } from '../inicio/inicio';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
   reg = RegistrarPage;
+  ini = InicioPage;
   usu = "";
   con = "";
-  usuarios=[{ usu: "", con: ""
+  usuarios=[{ usu: "", con: "", carr: "", tel: "", correo: ""
   }];
   
 
@@ -33,13 +35,12 @@ export class HomePage {
     
       if(index == index2)
       {
-        
-        const alert = this.alertCtrl.create({
-        title: 'Log in exitoso',
-        buttons: ['OK']
-      });
-      alert.present();
-
+      //const alert = this.alertCtrl.create({
+      //title: 'Log in exitoso',
+      //buttons: ['OK']
+      //});
+      //alert.present();
+      this.navCtrl.push(this.ini, {usuarios: this.usuarios});
       }
       else
       {
@@ -48,7 +49,6 @@ export class HomePage {
           buttons: ['OK']
         });
         alert2.present();
-
       }
     this.usu = "";
     this.con = "";

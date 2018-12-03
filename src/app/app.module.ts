@@ -8,12 +8,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegistrarPage } from '../pages/registrar/registrar';
 import { IonicStorageModule } from '@ionic/storage';
+import { InicioPage } from '../pages/inicio/inicio';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegistrarPage
+    RegistrarPage,
+    InicioPage
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { IonicStorageModule } from '@ionic/storage';
   entryComponents: [
     MyApp,
     HomePage,
-    RegistrarPage
+    RegistrarPage,
+    InicioPage
   ],
   providers: [
     StatusBar,

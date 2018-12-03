@@ -16,6 +16,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class RegistrarPage {
   usu = "";
   pass = "";
+  correo = "";
+  tel = "";
   usuarios=[];
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
     this.usuarios = this.navParams.get('usuarios')
@@ -31,7 +33,9 @@ export class RegistrarPage {
       this.usuarios.push(
         {
           usu: this.usu,
-          con: this.pass
+          con: this.pass,
+          correo: this.correo,
+          tel: this.tel,
 
         }
       )
