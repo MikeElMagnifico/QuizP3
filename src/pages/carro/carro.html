@@ -1,0 +1,27 @@
+<!--
+  Generated template for the CarroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title center text-center>Carro de Compras</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+      <ion-item *ngFor = "let c of carro">
+        <ion-avatar item-start>
+          <img [src]="c.foto">
+        </ion-avatar>
+        <h2 >{{c.nombre}} </h2>
+        <p>{{c.costo}}</p>
+
+      </ion-item>
+  </ion-list>
+</ion-content>

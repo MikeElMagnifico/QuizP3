@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+//import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the RegistrarPage page.
@@ -30,15 +31,16 @@ export class RegistrarPage {
   {
     if(this.pass.length>=8 && this.usu.length>0)
     {
-      this.usuarios.push(
-        {
-          usu: this.usu,
-          con: this.pass,
-          correo: this.correo,
-          tel: this.tel,
-
-        }
-      )
+       this.usuarios.push(
+         {
+           usu: this.usu,
+           con: this.pass,
+           correo: this.correo,
+           tel: this.tel,
+           carr: []
+         }        
+       )
+      //this.storage.set('usuarios', JSON.stringify(this.usuarios))
       this.navCtrl.pop()
     }
     else
