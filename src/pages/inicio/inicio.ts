@@ -20,16 +20,9 @@ export class InicioPage {
   pr = ProductoPage;
   carrito = CarroPage;
   carro = [];
-  usuarios = [];
-  carro2 = [];
-  carrousu=[];
-  nombre = "";
-  costo = "";
-  foto = "";
-   usu = "";
-   correo = "";
-   tel = "";
-   con = "";
+  carros = [];
+  
+  
   
   productos = [
     {id: 0, 
@@ -91,7 +84,7 @@ export class InicioPage {
     vendedor:"Pau Castellanos", 
     valoracion: [1,2,3,4,5],
     user: "Mónica Gallardo",
-    avatar: "../assets/M5.jpg",
+    avatar: "../assets/Avatar.png",
     fechar: "2018-12-04",
     resena: "El color es ideal para la estación",
     fechap: "2018-11-30",
@@ -99,12 +92,12 @@ export class InicioPage {
    },
    {id: 5, 
     nombre: "Calvin Klein Blusa para mujer", 
-    fotop: "../assets/M6.png",
+    fotop: "../assets/M6.jpg",
     precio: "$1,299",
     vendedor:"Mich Castellanos", 
     valoracion: [1,2,3,4,5],
     user: "Valria Paredes",
-    avatar: "../assets/M6.jpg",
+    avatar: "../assets/Avatar.png",
     fechar: "2018-12-04",
     resena: "Una tela de excelente calidad",
     fechap: "2018-11-30",
@@ -293,26 +286,26 @@ export class InicioPage {
     disponibles: "3",
    },
    
-
+  
   ]
+  usuarios = [];
+  usuario = {};
+  carrou = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
-    this.carrousu = this.navParams.get('Us');
-    this.usu = this.navParams.get('Us').usu;
-    this.con = this.navParams.get('Us').con;
-    this.tel = this.navParams.get('Us').tel;
-    this.correo = this.navParams.get('Us').correo;   
+    this.carrou = this.navParams.get('Carrou');
+    this.usuario = this.navParams.get('Usu');
+    this.usuarios = this.navParams.get('Usus');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InicioPage');
   }
   ClickProducto(id){
-    
-    this.navCtrl.push(this.pr, {producto: id, carro: this.carro})
+    this.navCtrl.push(this.pr, {producto: id, carro: this.carrou, usuarios: this.usuarios})
   }
   VerCarrito(){
-    this.carrousu.push({usu: this.usu, con: this.con, tel: this.tel, carr:this.carro,});
-    this.navCtrl.push(this.carrito, {carro: this.carro});
-    //this.storage.set('usuarios', JSON.stringify(this.carrousu));
+    this.navCtrl.push(this.carrito, {carro: this.carrou});
+    
   }
 }
+ 

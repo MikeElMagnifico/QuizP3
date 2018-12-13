@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'carro.html',
 })
 export class CarroPage {
-  carro = []
+  carro = ''
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.carro = this.navParams.get('carro');
   }

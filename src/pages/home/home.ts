@@ -10,37 +10,33 @@ import { InicioPage } from '../inicio/inicio';
 export class HomePage {
   reg = RegistrarPage;
   ini = InicioPage;
-  usu = "";
+  correo = "";
   con = "";
-  usuarios=[{ usu: "", con: "" , correo: "", tel: "", carr: []}, ];
+  usuarios=[{con: "" , correo: "", carrote: []}, ];
   
-
+ 
   constructor(public navCtrl: NavController, public alertCtrl: AlertController,public storage:Storage) {
-       this.storage.keys()
-       .then(keys =>{
-         console.log(keys);
-         if(keys.some(key => key == 'usuarios')){
-           this.storage.get('usuarios')
-           .then(usuarios =>{
-             this.usuarios = JSON.parse(usuarios);
+          this.storage.keys()
+          .then(keys =>{
+            console.log(keys);
+            if(keys.some(key => key == 'usuarios')){
+             this.storage.get('usuarios')
+              .then(usuarios =>{
+               this.usuarios = JSON.parse(usuarios);
+                console.log(usuarios)
+             });
+            }
           });
-         }
-       });
     //this.storage.clear();
   }
   Log()
   {
-    let index = this.usuarios.findIndex(u => u.usu == this.usu);
+    let index = this.usuarios.findIndex(u => u.correo == this.correo);
     let index2 = this.usuarios.findIndex(p => p.con == this.con);
-    if(this.usu.length>0 || this.con.length>=8){
+    if(this.correo.length>0 || this.con.length>=8){
       if(index == index2)
       {
-      //const alert = this.alertCtrl.create({
-      //title: 'Log in exitoso',
-      //buttons: ['OK']
-      //});
-      //alert.present();
-      this.navCtrl.push(this.ini, {Us: this.usuarios[index]});
+      this.navCtrl.push(this.ini, {Carrou: this.usuarios[index].carrote, Usu: this.usuarios[index], Usus: this.usuarios});
       console.log(this.usuarios)
       }
       else
@@ -51,7 +47,7 @@ export class HomePage {
         });
         alert2.present();
       }
-    this.usu = "";
+    this.correo = "";
     this.con = "";
     }
     else{

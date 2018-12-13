@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-//import {Storage} from '@ionic/storage';
+import {Storage} from '@ionic/storage';
 
 /**
  * Generated class for the RegistrarPage page.
@@ -20,7 +20,7 @@ export class RegistrarPage {
   correo = "";
   tel = "";
   usuarios=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public storage: Storage) {
     this.usuarios = this.navParams.get('usuarios')
   }
 
@@ -33,14 +33,13 @@ export class RegistrarPage {
     {
        this.usuarios.push(
          {
-           usu: this.usu,
            con: this.pass,
            correo: this.correo,
-           tel: this.tel,
-           carr: []
+           carrote: []
          }        
        )
-      //this.storage.set('usuarios', JSON.stringify(this.usuarios))
+       
+      this.storage.set('usuarios', JSON.stringify(this.usuarios))
       this.navCtrl.pop()
     }
     else
