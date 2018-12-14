@@ -21,6 +21,8 @@ export class InicioPage {
   carrito = CarroPage;
   carro = [];
   carros = [];
+  usuarios = [];
+  carrou = [];
   
   
   
@@ -288,12 +290,10 @@ export class InicioPage {
    
   
   ]
-  usuarios = [];
-  usuario = {};
-  carrou = [];
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage) {
     this.carrou = this.navParams.get('Carrou');
-    this.usuario = this.navParams.get('Usu');
+  
     this.usuarios = this.navParams.get('Usus');
   }
 

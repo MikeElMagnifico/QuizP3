@@ -36,7 +36,7 @@ export class HomePage {
     if(this.correo.length>0 || this.con.length>=8){
       if(index == index2)
       {
-      this.navCtrl.push(this.ini, {Carrou: this.usuarios[index].carrote, Usu: this.usuarios[index], Usus: this.usuarios});
+      this.navCtrl.push(this.ini, {Carrou: this.usuarios[index].carrote, Usus: this.usuarios});
       console.log(this.usuarios)
       }
       else
